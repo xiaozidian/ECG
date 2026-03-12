@@ -1,0 +1,473 @@
+(TraeAI-5) ~/project [0] $ python /root/project/ECG/ptbxl_rr_dataset_builder/train_rr_cnn.py
+
+[train] total=16853
+  SR          : 13372
+  AFIB        : 1192
+  STACH       : 654
+  SBRAD       : 518
+  SARRH       : 631
+  OTHER_RHYTHM: 486
+
+[val] total=2120
+  SR          : 1705
+  AFIB        : 152
+  STACH       : 75
+  SBRAD       : 53
+  SARRH       : 68
+  OTHER_RHYTHM: 67
+
+[test] total=2091
+  SR          : 1643
+  AFIB        : 170
+  STACH       : 76
+  SBRAD       : 60
+  SARRH       : 68
+  OTHER_RHYTHM: 74
+epoch=1 loss=1.104554 val_macro_f1=0.4496
+epoch=2 loss=0.892658 val_macro_f1=0.4652
+epoch=3 loss=0.819540 val_macro_f1=0.4542
+epoch=4 loss=0.770211 val_macro_f1=0.4855
+epoch=5 loss=0.730616 val_macro_f1=0.4586
+epoch=6 loss=0.711774 val_macro_f1=0.4758
+epoch=7 loss=0.675455 val_macro_f1=0.4942
+epoch=8 loss=0.657373 val_macro_f1=0.4702
+epoch=9 loss=0.627122 val_macro_f1=0.5030
+epoch=10 loss=0.598406 val_macro_f1=0.4639
+epoch=11 loss=0.575887 val_macro_f1=0.4945
+epoch=12 loss=0.565650 val_macro_f1=0.4978
+epoch=13 loss=0.553982 val_macro_f1=0.4898
+epoch=14 loss=0.527399 val_macro_f1=0.4805
+epoch=15 loss=0.522722 val_macro_f1=0.4475
+epoch=16 loss=0.489592 val_macro_f1=0.4929
+epoch=17 loss=0.471809 val_macro_f1=0.5144
+epoch=18 loss=0.453075 val_macro_f1=0.4939
+epoch=19 loss=0.442223 val_macro_f1=0.4918
+epoch=20 loss=0.439341 val_macro_f1=0.4840
+epoch=21 loss=0.426697 val_macro_f1=0.5109
+epoch=22 loss=0.393376 val_macro_f1=0.4496
+epoch=23 loss=0.416331 val_macro_f1=0.4592
+epoch=24 loss=0.393201 val_macro_f1=0.4870
+epoch=25 loss=0.398172 val_macro_f1=0.4943
+epoch=26 loss=0.391840 val_macro_f1=0.4722
+epoch=27 loss=0.389195 val_macro_f1=0.4892
+epoch=28 loss=0.354502 val_macro_f1=0.5201
+epoch=29 loss=0.346963 val_macro_f1=0.4705
+epoch=30 loss=0.337859 val_macro_f1=0.4966
+epoch=31 loss=0.341087 val_macro_f1=0.5175
+epoch=32 loss=0.364190 val_macro_f1=0.5121
+epoch=33 loss=0.332357 val_macro_f1=0.5031
+epoch=34 loss=0.330402 val_macro_f1=0.4597
+epoch=35 loss=0.314481 val_macro_f1=0.5233
+epoch=36 loss=0.304865 val_macro_f1=0.4905
+epoch=37 loss=0.298567 val_macro_f1=0.5274
+epoch=38 loss=0.324892 val_macro_f1=0.4868
+epoch=39 loss=0.317791 val_macro_f1=0.5529
+epoch=40 loss=0.325540 val_macro_f1=0.4726
+test_macro_f1 0.559723436832428
+test_f1_per_class {'SR': 0.882218599319458, 'AFIB': 0.6542553305625916, 'STACH': 0.7875000238418579, 'SBRAD': 0.46987950801849365, 'SARRH': 0.3212435245513916, 'OTHER_RHYTHM': 0.2432432323694229}
+test_confusion_matrix
+[[1352   48   16   59   70   98]
+ [  12  123    1    3   17   14]
+ [   2    7   63    0    1    3]
+ [  13    3    0   39    1    4]
+ [  20   12    1    2   31    2]
+ [  23   13    3    3    5   27]]
+
+import argparse
+from pathlib import Path
+from typing import Dict, List, Tuple
+
+import numpy as np
+import pandas as pd
+import torch
+from torch import nn
+from torch.utils.data import DataLoader, Dataset
+
+
+CLASSES = ["SR", "AFIB", "STACH", "SBRAD", "SARRH", "OTHER_RHYTHM"]
+CLASS_MAP = {label: idx for idx, label in enumerate(CLASSES)}
+
+
+def _set_seed(seed: int) -> None:
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+
+
+def _load_index(index_csv: Path, meta_csv: Path) -> pd.DataFrame:
+    df = pd.read_csv(index_csv)
+    meta = pd.read_csv(meta_csv, usecols=["ecg_id", "patient_id"])
+    meta["ecg_id"] = meta["ecg_id"].astype(str)
+    df["record_id"] = df["record_id"].astype(str)
+    df = df.merge(meta, left_on="record_id", right_on="ecg_id", how="left")
+    if df["patient_id"].isna().any():
+        missing = df[df["patient_id"].isna()]["record_id"].head(5).tolist()
+        raise RuntimeError(f"missing patient_id for records: {missing}")
+    df = df[df["labels"].isin(CLASSES)].reset_index(drop=True)
+    return df
+
+
+def _split_by_patient(
+    df: pd.DataFrame,
+    train_ratio: float,
+    val_ratio: float,
+    seed: int,
+) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    patients = df["patient_id"].unique().tolist()
+    rng = np.random.RandomState(seed)
+    rng.shuffle(patients)
+    n_total = len(patients)
+    n_train = int(round(n_total * train_ratio))
+    n_val = int(round(n_total * val_ratio))
+    train_patients = set(patients[:n_train])
+    val_patients = set(patients[n_train : n_train + n_val])
+    test_patients = set(patients[n_train + n_val :])
+    train_df = df[df["patient_id"].isin(train_patients)].reset_index(drop=True)
+    val_df = df[df["patient_id"].isin(val_patients)].reset_index(drop=True)
+    test_df = df[df["patient_id"].isin(test_patients)].reset_index(drop=True)
+    return train_df, val_df, test_df
+
+
+def _clip_rr(arr: np.ndarray, low: float, high: float) -> np.ndarray:
+    if arr.size == 0:
+        return arr.astype(np.float32)
+    return np.clip(arr, low, high).astype(np.float32)
+
+
+def _zscore(arr: np.ndarray, mean: float, std: float) -> np.ndarray:
+    arr = arr.astype(np.float32)
+    if std <= 0:
+        return np.zeros_like(arr, dtype=np.float32)
+    return (arr - float(mean)) / float(std)
+
+
+def _pad_or_trim(arr: np.ndarray, target_len: int, pad_value: float = None) -> np.ndarray:
+    if arr.shape[0] == target_len:
+        return arr
+    if arr.shape[0] > target_len:
+        return arr[:target_len]
+    if arr.shape[0] == 0:
+        fill_value = 0.0 if pad_value is None else float(pad_value)
+        return np.full((target_len,), fill_value, dtype=np.float32)
+    pv = float(arr[-1]) if pad_value is None else float(pad_value)
+    pad_width = target_len - arr.shape[0]
+    return np.pad(arr, (0, pad_width), mode="constant", constant_values=pv).astype(np.float32)
+
+
+class RRDataset(Dataset):
+    def __init__(
+        self,
+        df: pd.DataFrame,
+        seq_len: int,
+        rr_key: str,
+        rr_mean: float,
+        rr_std: float,
+        delta_mean: float,
+        delta_std: float,
+        rr_clip_low: float,
+        rr_clip_high: float,
+    ) -> None:
+        self.df = df
+        self.seq_len = int(seq_len)
+        self.rr_key = rr_key
+        self.rr_mean = float(rr_mean)
+        self.rr_std = float(rr_std)
+        self.delta_mean = float(delta_mean)
+        self.delta_std = float(delta_std)
+        self.rr_clip_low = float(rr_clip_low)
+        self.rr_clip_high = float(rr_clip_high)
+
+    def __len__(self) -> int:
+        return len(self.df)
+
+    def _load_rr(self, path: str) -> Tuple[np.ndarray, np.ndarray]:
+        with np.load(path, allow_pickle=True) as data:
+            if self.rr_key in data:
+                rr_ms = data[self.rr_key]
+            elif "rr_ms" in data:
+                rr_ms = data["rr_ms"]
+            else:
+                raise RuntimeError(f"no rr array in {path}")
+        rr_ms = _clip_rr(rr_ms, self.rr_clip_low, self.rr_clip_high)
+        rr_z = _zscore(rr_ms, self.rr_mean, self.rr_std)
+        delta_rr = np.diff(rr_ms, prepend=rr_ms[0] if rr_ms.size else 0.0)
+        delta_z = _zscore(delta_rr, self.delta_mean, self.delta_std)
+        rr_z = _pad_or_trim(rr_z, self.seq_len, pad_value=rr_z[-1] if rr_z.size else 0.0)
+        delta_z = _pad_or_trim(delta_z, self.seq_len, pad_value=0.0)
+        return rr_z, delta_z
+
+    def __getitem__(self, idx: int) -> Tuple[torch.Tensor, torch.Tensor]:
+        row = self.df.iloc[idx]
+        rr, delta = self._load_rr(row["file_path"])
+        label = CLASS_MAP[str(row["labels"])]
+        x = torch.from_numpy(np.stack([rr, delta], axis=0))
+        y = torch.tensor(label, dtype=torch.long)
+        return x, y
+
+
+class RRResNetLite(nn.Module):
+    def __init__(self, in_channels: int, num_classes: int, channels: List[int]) -> None:
+        super().__init__()
+        blocks = []
+        prev_c = in_channels
+        for c in channels:
+            blocks.append(nn.Conv1d(prev_c, c, kernel_size=3, stride=1, padding=1, bias=False))
+            blocks.append(nn.BatchNorm1d(c))
+            blocks.append(nn.ReLU(inplace=True))
+            blocks.append(nn.MaxPool1d(kernel_size=2, stride=2))
+            prev_c = c
+        self.features = nn.Sequential(*blocks)
+        self.classifier = nn.Linear(prev_c, num_classes)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        x = self.features(x)
+        x = x.mean(dim=-1)
+        return self.classifier(x)
+
+
+class FocalLoss(nn.Module):
+    def __init__(self, gamma: float = 2.0, weight: torch.Tensor = None) -> None:
+        super().__init__()
+        self.gamma = float(gamma)
+        self.weight = weight
+
+    def forward(self, logits: torch.Tensor, target: torch.Tensor) -> torch.Tensor:
+        logp = nn.functional.log_softmax(logits, dim=1)
+        logpt = logp.gather(1, target.view(-1, 1)).squeeze(1)
+        pt = logpt.exp()
+        loss = -((1 - pt) ** self.gamma) * logpt
+        if self.weight is not None:
+            weight = self.weight.gather(0, target)
+            loss = loss * weight
+        return loss.mean()
+
+
+def _class_weights(labels: np.ndarray, num_classes: int) -> torch.Tensor:
+    counts = np.bincount(labels, minlength=num_classes).astype(np.float32)
+    total = float(counts.sum())
+    weights = total / (num_classes * np.maximum(counts, 1.0))
+    return torch.tensor(weights, dtype=torch.float32)
+
+
+def _confusion_matrix(y_true: np.ndarray, y_pred: np.ndarray, num_classes: int) -> np.ndarray:
+    cm = np.zeros((num_classes, num_classes), dtype=np.int64)
+    for t, p in zip(y_true, y_pred):
+        cm[int(t), int(p)] += 1
+    return cm
+
+
+def _metrics_from_cm(cm: np.ndarray) -> Dict[str, np.ndarray]:
+    tp = np.diag(cm).astype(np.float32)
+    pred_sum = cm.sum(axis=0).astype(np.float32)
+    true_sum = cm.sum(axis=1).astype(np.float32)
+    precision = tp / np.maximum(pred_sum, 1.0)
+    recall = tp / np.maximum(true_sum, 1.0)
+    f1 = 2 * precision * recall / np.maximum(precision + recall, 1e-12)
+    macro_f1 = float(np.mean(f1))
+    return {"precision": precision, "recall": recall, "f1": f1, "macro_f1": macro_f1}
+
+
+@torch.no_grad()
+def evaluate(model: nn.Module, loader: DataLoader, device: torch.device) -> Dict[str, np.ndarray]:
+    model.eval()
+    all_preds = []
+    all_labels = []
+    for x, y in loader:
+        x = x.to(device)
+        logits = model(x)
+        pred = logits.argmax(dim=1).cpu().numpy()
+        all_preds.append(pred)
+        all_labels.append(y.numpy())
+    y_pred = np.concatenate(all_preds, axis=0)
+    y_true = np.concatenate(all_labels, axis=0)
+    cm = _confusion_matrix(y_true, y_pred, len(CLASSES))
+    metrics = _metrics_from_cm(cm)
+    metrics["confusion_matrix"] = cm
+    return metrics
+
+
+def _compute_train_stats(
+    df: pd.DataFrame,
+    rr_key: str,
+    rr_clip_low: float,
+    rr_clip_high: float,
+) -> Tuple[float, float, float, float]:
+    rr_count = 0
+    rr_mean = 0.0
+    rr_m2 = 0.0
+    delta_count = 0
+    delta_mean = 0.0
+    delta_m2 = 0.0
+
+    for path in df["file_path"].tolist():
+        with np.load(path, allow_pickle=True) as data:
+            if rr_key in data:
+                rr_ms = data[rr_key]
+            elif "rr_ms" in data:
+                rr_ms = data["rr_ms"]
+            else:
+                continue
+        rr_ms = _clip_rr(rr_ms, rr_clip_low, rr_clip_high).astype(np.float64)
+        for v in rr_ms:
+            rr_count += 1
+            delta = v - rr_mean
+            rr_mean += delta / rr_count
+            rr_m2 += delta * (v - rr_mean)
+        delta_rr = np.diff(rr_ms, prepend=rr_ms[0] if rr_ms.size else 0.0)
+        for v in delta_rr:
+            delta_count += 1
+            delta2 = v - delta_mean
+            delta_mean += delta2 / delta_count
+            delta_m2 += delta2 * (v - delta_mean)
+
+    rr_var = rr_m2 / max(rr_count - 1, 1)
+    delta_var = delta_m2 / max(delta_count - 1, 1)
+    rr_std = float(np.sqrt(rr_var)) if rr_var > 0 else 1.0
+    delta_std = float(np.sqrt(delta_var)) if delta_var > 0 else 1.0
+    return float(rr_mean), rr_std, float(delta_mean), delta_std
+
+def _print_split_counts(name, dff):
+    counts = dff["labels"].value_counts().reindex(CLASSES, fill_value=0)
+    total = int(counts.sum())
+    print(f"\n[{name}] total={total}")
+    for k, v in counts.items():
+        print(f"  {k:12s}: {int(v)}")
+
+def train(args: argparse.Namespace) -> None:
+    _set_seed(args.seed)
+    index_csv = Path(args.index_csv)
+    meta_csv = Path(args.meta_csv)
+    df = _load_index(index_csv, meta_csv)
+    train_df, val_df, test_df = _split_by_patient(df, 0.8, 0.1, args.seed)
+    _print_split_counts("train", train_df)
+    _print_split_counts("val",   val_df)
+    _print_split_counts("test",  test_df)
+
+    rr_mean, rr_std, delta_mean, delta_std = _compute_train_stats(
+        train_df, args.rr_key, args.rr_clip_low, args.rr_clip_high
+    )
+    train_ds = RRDataset(
+        train_df,
+        args.seq_len,
+        args.rr_key,
+        rr_mean,
+        rr_std,
+        delta_mean,
+        delta_std,
+        args.rr_clip_low,
+        args.rr_clip_high,
+    )
+    val_ds = RRDataset(
+        val_df,
+        args.seq_len,
+        args.rr_key,
+        rr_mean,
+        rr_std,
+        delta_mean,
+        delta_std,
+        args.rr_clip_low,
+        args.rr_clip_high,
+    )
+    test_ds = RRDataset(
+        test_df,
+        args.seq_len,
+        args.rr_key,
+        rr_mean,
+        rr_std,
+        delta_mean,
+        delta_std,
+        args.rr_clip_low,
+        args.rr_clip_high,
+    )
+
+    train_loader = DataLoader(train_ds, batch_size=args.batch_size, shuffle=True, num_workers=args.num_workers)
+    val_loader = DataLoader(val_ds, batch_size=args.batch_size, shuffle=False, num_workers=args.num_workers)
+    test_loader = DataLoader(test_ds, batch_size=args.batch_size, shuffle=False, num_workers=args.num_workers)
+
+    device = torch.device("cuda" if torch.cuda.is_available() and not args.cpu else "cpu")
+    model = RRResNetLite(2, len(CLASSES), args.channels).to(device)
+
+    y_train = train_df["labels"].map(CLASS_MAP).to_numpy()
+    weights = _class_weights(y_train, len(CLASSES)).to(device)
+    if args.loss == "focal":
+        criterion = FocalLoss(gamma=args.focal_gamma, weight=weights)
+    else:
+        criterion = nn.CrossEntropyLoss(weight=weights)
+
+    optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
+
+    best_macro = -1.0
+    best_state = None
+
+    for epoch in range(1, args.epochs + 1):
+        model.train()
+        total_loss = 0.0
+        for x, y in train_loader:
+            x = x.to(device)
+            y = y.to(device)
+            logits = model(x)
+            loss = criterion(logits, y)
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+            total_loss += float(loss.item()) * x.size(0)
+        avg_loss = total_loss / max(len(train_loader.dataset), 1)
+        val_metrics = evaluate(model, val_loader, device)
+        macro_f1 = float(val_metrics["macro_f1"])
+        if macro_f1 > best_macro:
+            best_macro = macro_f1
+            best_state = {k: v.detach().cpu() for k, v in model.state_dict().items()}
+        print(
+            f"epoch={epoch} loss={avg_loss:.6f} val_macro_f1={macro_f1:.4f}"
+        )
+
+    if best_state is not None and args.save_path:
+        Path(args.save_path).parent.mkdir(parents=True, exist_ok=True)
+        torch.save(
+            {
+                "state_dict": best_state,
+                "classes": CLASSES,
+                "seq_len": args.seq_len,
+                "rr_mean": rr_mean,
+                "rr_std": rr_std,
+                "delta_mean": delta_mean,
+                "delta_std": delta_std,
+                "rr_clip_low": args.rr_clip_low,
+                "rr_clip_high": args.rr_clip_high,
+            },
+            args.save_path,
+        )
+
+    if best_state is not None:
+        model.load_state_dict(best_state)
+    test_metrics = evaluate(model, test_loader, device)
+    print("test_macro_f1", float(test_metrics["macro_f1"]))
+    print("test_f1_per_class", dict(zip(CLASSES, test_metrics["f1"].tolist())))
+    print("test_confusion_matrix")
+    print(test_metrics["confusion_matrix"])
+
+
+def build_argparser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--index_csv", type=str, default="/root/project/ECG/ptbxl_rr_dataset_builder/output_ptbxl_rhythm/index.csv")
+    parser.add_argument("--meta_csv", type=str, default="/root/project/ECG/PTB-XL/ptbxl_database.csv")
+    parser.add_argument("--seq_len", type=int, default=20)
+    parser.add_argument("--rr_key", type=str, default="rr_ms")
+    parser.add_argument("--channels", type=int, nargs="+", default=[16, 32, 64, 128])
+    parser.add_argument("--batch_size", type=int, default=128)
+    parser.add_argument("--epochs", type=int, default=40)
+    parser.add_argument("--lr", type=float, default=1e-3)
+    parser.add_argument("--loss", type=str, choices=["ce", "focal"], default="ce")
+    parser.add_argument("--focal_gamma", type=float, default=2.0)
+    parser.add_argument("--num_workers", type=int, default=4)
+    parser.add_argument("--seed", type=int, default=1337)
+    parser.add_argument("--cpu", action="store_true")
+    parser.add_argument("--save_path", type=str, default="/root/project/ECG/ptbxl_rr_dataset_builder/checkpoints/rr_cnn.pt")
+    parser.add_argument("--rr_clip_low", type=float, default=300.0)
+    parser.add_argument("--rr_clip_high", type=float, default=2000.0)
+    return parser
+
+
+if __name__ == "__main__":
+    args = build_argparser().parse_args()
+    train(args)

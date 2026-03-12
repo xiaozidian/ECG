@@ -1,0 +1,131 @@
+2026-01-22 00:38:08.371179: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Python: /home/vipuser/miniconda3/bin/python
+TensorFlow: 2.13.1
+Visible GPUs: [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+Config: batch_size=4096, epochs=50, val_split=0.1, mixed_precision=True, xla=True, steps_per_execution=64
+Loading data...
+Train shape: X=(784756, 187, 1), Y=(784756,)
+Test shape: X=(169991, 187, 1), Y=(169991,)
+Model: "model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_1 (InputLayer)        [(None, 187, 1)]          0         
+                                                                 
+ conv1d (Conv1D)             (None, 183, 16)           96        
+                                                                 
+ conv1d_1 (Conv1D)           (None, 179, 16)           1296      
+                                                                 
+ max_pooling1d (MaxPooling1  (None, 89, 16)            0         
+ D)                                                              
+                                                                 
+ dropout (Dropout)           (None, 89, 16)            0         
+                                                                 
+ conv1d_2 (Conv1D)           (None, 87, 32)            1568      
+                                                                 
+ conv1d_3 (Conv1D)           (None, 85, 32)            3104      
+                                                                 
+ max_pooling1d_1 (MaxPoolin  (None, 42, 32)            0         
+ g1D)                                                            
+                                                                 
+ dropout_1 (Dropout)         (None, 42, 32)            0         
+                                                                 
+ conv1d_4 (Conv1D)           (None, 40, 32)            3104      
+                                                                 
+ conv1d_5 (Conv1D)           (None, 38, 32)            3104      
+                                                                 
+ max_pooling1d_2 (MaxPoolin  (None, 19, 32)            0         
+ g1D)                                                            
+                                                                 
+ dropout_2 (Dropout)         (None, 19, 32)            0         
+                                                                 
+ conv1d_6 (Conv1D)           (None, 17, 256)           24832     
+                                                                 
+ conv1d_7 (Conv1D)           (None, 15, 256)           196864    
+                                                                 
+ global_max_pooling1d (Glob  (None, 256)               0         
+ alMaxPooling1D)                                                 
+                                                                 
+ dropout_3 (Dropout)         (None, 256)               0         
+                                                                 
+ dense_1 (Dense)             (None, 64)                16448     
+                                                                 
+ dense_2 (Dense)             (None, 64)                4160      
+                                                                 
+ dense_3_mitbih (Dense)      (None, 5)                 325       
+                                                                 
+=================================================================
+Total params: 254901 (995.71 KB)
+Trainable params: 254901 (995.71 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+Starting training...
+Epoch 1/50
+2026-01-22 00:38:26.999937: W tensorflow/compiler/tf2xla/kernels/random_ops.cc:57] Warning: Using tf.random.uniform with XLA compilation will ignore seeds; consider using tf.random.stateless_uniform instead if reproducible behavior is desired. model/dropout/dropout/random_uniform/RandomUniform
+ 64/172 [==========>...................] - ETA: 57s - loss: 0.2369 - acc: 0.9898128/172 [=====================>........] - ETA: 14s - loss: 0.1508 - acc: 0.9898172/172 [==============================] - ETA: 0s - loss: 0.1279 - acc: 0.9899 
+Epoch 1: val_acc improved from -inf to 0.99030, saving model to /root/project/ECG/ecg_changgen/clinical_cnn_mitbih.h5
+/home/vipuser/miniconda3/lib/python3.8/site-packages/keras/src/engine/training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+172/172 [==============================] - 55s 318ms/step - loss: 0.1279 - acc: 0.9899 - val_loss: 0.0616 - val_acc: 0.9903 - lr: 0.0010
+Epoch 2/50
+ 64/172 [==========>...................] - ETA: 15s - loss: 0.0615 - acc: 0.9899128/172 [=====================>........] - ETA: 5s - loss: 0.0605 - acc: 0.9899 172/172 [==============================] - ETA: 0s - loss: 0.0602 - acc: 0.9899
+Epoch 2: val_acc did not improve from 0.99030
+172/172 [==============================] - 21s 123ms/step - loss: 0.0602 - acc: 0.9899 - val_loss: 0.0573 - val_acc: 0.9903 - lr: 0.0010
+Epoch 3/50
+ 64/172 [==========>...................] - ETA: 15s - loss: 0.0571 - acc: 0.9900128/172 [=====================>........] - ETA: 5s - loss: 0.0563 - acc: 0.9899 172/172 [==============================] - ETA: 0s - loss: 0.0558 - acc: 0.9899
+Epoch 3: val_acc did not improve from 0.99030
+172/172 [==============================] - 21s 123ms/step - loss: 0.0558 - acc: 0.9899 - val_loss: 0.0561 - val_acc: 0.9903 - lr: 0.0010
+Epoch 4/50
+ 64/172 [==========>...................] - ETA: 15s - loss: 0.0537 - acc: 0.9899128/172 [=====================>........] - ETA: 5s - loss: 0.0534 - acc: 0.9899 172/172 [==============================] - ETA: 0s - loss: 0.0532 - acc: 0.9899
+Epoch 4: val_acc did not improve from 0.99030
+
+Epoch 4: ReduceLROnPlateau reducing learning rate to 0.00010000000474974513.
+172/172 [==============================] - 21s 123ms/step - loss: 0.0532 - acc: 0.9899 - val_loss: 0.0505 - val_acc: 0.9903 - lr: 0.0010
+Epoch 5/50
+ 64/172 [==========>...................] - ETA: 15s - loss: 0.0516 - acc: 0.9900128/172 [=====================>........] - ETA: 5s - loss: 0.0519 - acc: 0.9899 172/172 [==============================] - ETA: 0s - loss: 0.0518 - acc: 0.9899
+Epoch 5: val_acc did not improve from 0.99030
+172/172 [==============================] - 21s 123ms/step - loss: 0.0518 - acc: 0.9899 - val_loss: 0.0501 - val_acc: 0.9903 - lr: 1.0000e-04
+Epoch 6/50
+ 64/172 [==========>...................] - ETA: 15s - loss: 0.0514 - acc: 0.9900128/172 [=====================>........] - ETA: 5s - loss: 0.0517 - acc: 0.9899 172/172 [==============================] - ETA: 0s - loss: 0.0515 - acc: 0.9899
+Epoch 6: val_acc did not improve from 0.99030
+172/172 [==============================] - 21s 123ms/step - loss: 0.0515 - acc: 0.9899 - val_loss: 0.0495 - val_acc: 0.9903 - lr: 1.0000e-04
+Epoch 6: early stopping
+
+Loading best weights for evaluation...
+Evaluating on test set...
+2026-01-22 00:41:03.826056: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1794] (One-time warning): Not using XLA:CPU for cluster.
+
+If you want XLA:CPU, do one of the following:
+
+ - set the TF_XLA_FLAGS to include "--tf_xla_cpu_global_jit", or
+ - set cpu_global_jit to true on this session's OptimizerOptions, or
+ - use experimental_jit_scope, or
+ - use tf.function(jit_compile=True).
+
+To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a
+proper command-line flag, not via TF_XLA_FLAGS).
+42/42 [==============================] - ETA: 0s42/42 [==============================] - 9s 209ms/step
+
+==================================================
+Test Accuracy: 0.9993
+Test F1 Score (Macro): 0.3332
+==================================================
+
+Classification Report:
+/home/vipuser/miniconda3/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/vipuser/miniconda3/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/vipuser/miniconda3/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+              precision    recall  f1-score   support
+
+           0     0.9993    1.0000    0.9997    169878
+           1     0.0000    0.0000    0.0000        34
+           2     0.0000    0.0000    0.0000        79
+
+    accuracy                         0.9993    169991
+   macro avg     0.3331    0.3333    0.3332    169991
+weighted avg     0.9987    0.9993    0.9990    169991
+

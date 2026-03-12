@@ -1,0 +1,3 @@
+[submodule "ECG/torch_ecg"]
+	path = ECG/torch_ecg
+	url = https://github.com/DeepPSP/torch_ecg.git

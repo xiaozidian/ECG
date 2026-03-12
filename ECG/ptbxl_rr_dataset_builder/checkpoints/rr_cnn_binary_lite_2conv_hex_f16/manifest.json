@@ -1,0 +1,51 @@
+{
+  "checkpoint": "/root/project/ECG/ptbxl_rr_dataset_builder/checkpoints/rr_cnn_binary_lite_2conv.pt",
+  "format": {
+    "encoding": "ieee754_float16",
+    "endianness": "little",
+    "word_bytes": 2,
+    "hex_chars_per_word": 4,
+    "layout": "flatten_c_order",
+    "one_word_per_line": true,
+    "note": "每行是一个16-bit word的byte序列(小端)的hex字符串"
+  },
+  "tensors": {
+    "conv1.weight": {
+      "file": "conv1.weight.hex",
+      "shape": [
+        3,
+        1,
+        7
+      ],
+      "dtype": "float16",
+      "numel": 21
+    },
+    "conv2.weight": {
+      "file": "conv2.weight.hex",
+      "shape": [
+        8,
+        3,
+        5
+      ],
+      "dtype": "float16",
+      "numel": 120
+    },
+    "fc.weight": {
+      "file": "fc.weight.hex",
+      "shape": [
+        2,
+        24
+      ],
+      "dtype": "float16",
+      "numel": 48
+    },
+    "fc.bias": {
+      "file": "fc.bias.hex",
+      "shape": [
+        2
+      ],
+      "dtype": "float16",
+      "numel": 2
+    }
+  }
+}

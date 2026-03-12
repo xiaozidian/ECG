@@ -1,0 +1,1552 @@
+[
+  {
+    "record_id": "2508040816266615",
+    "diffs": {
+      "total_beats": {
+        "gt": 106370,
+        "calc": 106468,
+        "abs_diff": 98,
+        "pct_diff": 0.09213124001128137
+      },
+      "avg_hr": {
+        "gt": 75,
+        "calc": 73.11934674340588,
+        "abs_diff": -1.8806532565941154,
+        "pct_diff": -2.5075376754588206
+      },
+      "max_hr": {
+        "gt": 117,
+        "calc": 118.16480718919745,
+        "abs_diff": 1.1648071891974467,
+        "pct_diff": 0.9955617001687579
+      },
+      "min_hr": {
+        "gt": 54,
+        "calc": 54.319718559659336,
+        "abs_diff": 0.3197185596593357,
+        "pct_diff": 0.5920714067765476
+      },
+      "max_rr": {
+        "gt": 1.364,
+        "calc": 1.488,
+        "abs_diff": 0.12399999999999989,
+        "pct_diff": 9.090909090909081
+      },
+      "ventricular_total": {
+        "gt": 5247,
+        "calc": 3204,
+        "abs_diff": -2043,
+        "pct_diff": -38.93653516295026
+      },
+      "ventricular_single": {
+        "gt": 5245,
+        "calc": 3088,
+        "abs_diff": -2157,
+        "pct_diff": -41.124880838894185
+      },
+      "ventricular_pair": {
+        "gt": 1,
+        "calc": 58,
+        "abs_diff": 57,
+        "pct_diff": 5700.0
+      },
+      "ventricular_bigeminy": {
+        "gt": 4,
+        "calc": 57,
+        "abs_diff": 53,
+        "pct_diff": 1325.0
+      },
+      "ventricular_trigeminy": {
+        "gt": 365,
+        "calc": 1166,
+        "abs_diff": 801,
+        "pct_diff": 219.45205479452054
+      },
+      "ventricular_vt": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_total": {
+        "gt": 5,
+        "calc": 159,
+        "abs_diff": 154,
+        "pct_diff": 3080.0
+      },
+      "supraventricular_single": {
+        "gt": 5,
+        "calc": 133,
+        "abs_diff": 128,
+        "pct_diff": 2560.0
+      },
+      "supraventricular_pair": {
+        "gt": 0,
+        "calc": 9,
+        "abs_diff": 9,
+        "pct_diff": 0
+      },
+      "supraventricular_bigeminy": {
+        "gt": 0,
+        "calc": 4,
+        "abs_diff": 4,
+        "pct_diff": 0
+      },
+      "supraventricular_trigeminy": {
+        "gt": 0,
+        "calc": 2,
+        "abs_diff": 2,
+        "pct_diff": 0
+      },
+      "supraventricular_svt": {
+        "gt": 0,
+        "calc": 2,
+        "abs_diff": 2,
+        "pct_diff": 0
+      },
+      "sdnn": {
+        "gt": 125,
+        "calc": 134.0970972672327,
+        "abs_diff": 9.097097267232698,
+        "pct_diff": 7.277677813786158
+      },
+      "sdann": {
+        "gt": 113,
+        "calc": 120.97560008513298,
+        "abs_diff": 7.975600085132982,
+        "pct_diff": 7.058053172684055
+      },
+      "rmssd": {
+        "gt": 25,
+        "calc": 29.69932560946364,
+        "abs_diff": 4.699325609463639,
+        "pct_diff": 18.797302437854555
+      },
+      "pnn50": {
+        "gt": 5.5,
+        "calc": 6.6688892593209985,
+        "abs_diff": 1.1688892593209985,
+        "pct_diff": 21.252531987654518
+      },
+      "lf": {
+        "gt": 219,
+        "calc": 180.4409561609312,
+        "abs_diff": -38.559043839068806,
+        "pct_diff": -17.606869332908133
+      },
+      "hf": {
+        "gt": 165,
+        "calc": 158.5412048225504,
+        "abs_diff": -6.458795177449588,
+        "pct_diff": -3.914421319666417
+      },
+      "lf_hf": {
+        "gt": 1.32,
+        "calc": 1.1381328681265694,
+        "abs_diff": -0.18186713187343062,
+        "pct_diff": -13.777813020714442
+      },
+      "tri_index": {
+        "gt": 47.58,
+        "calc": 46.91060903732809,
+        "abs_diff": -0.6693909626719048,
+        "pct_diff": -1.4068746588312417
+      }
+    }
+  },
+  {
+    "record_id": "2508040816576026",
+    "diffs": {
+      "total_beats": {
+        "gt": 104528,
+        "calc": 104615,
+        "abs_diff": 87,
+        "pct_diff": 0.08323128731057707
+      },
+      "avg_hr": {
+        "gt": 73,
+        "calc": 70.53409904408103,
+        "abs_diff": -2.4659009559189684,
+        "pct_diff": -3.377946514957491
+      },
+      "max_hr": {
+        "gt": 122,
+        "calc": 114.14331936719996,
+        "abs_diff": -7.856680632800035,
+        "pct_diff": -6.439902158032816
+      },
+      "min_hr": {
+        "gt": 51,
+        "calc": 49.10681323226889,
+        "abs_diff": -1.893186767731109,
+        "pct_diff": -3.712130917119821
+      },
+      "max_rr": {
+        "gt": 1.705,
+        "calc": 1.416,
+        "abs_diff": -0.28900000000000015,
+        "pct_diff": -16.95014662756599
+      },
+      "ventricular_total": {
+        "gt": 0,
+        "calc": 26,
+        "abs_diff": 26,
+        "pct_diff": 0
+      },
+      "ventricular_single": {
+        "gt": 0,
+        "calc": 26,
+        "abs_diff": 26,
+        "pct_diff": 0
+      },
+      "ventricular_pair": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "ventricular_bigeminy": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "ventricular_trigeminy": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "ventricular_vt": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_total": {
+        "gt": 1763,
+        "calc": 72,
+        "abs_diff": -1691,
+        "pct_diff": -95.91605218377765
+      },
+      "supraventricular_single": {
+        "gt": 1761,
+        "calc": 70,
+        "abs_diff": -1691,
+        "pct_diff": -96.02498580352072
+      },
+      "supraventricular_pair": {
+        "gt": 1,
+        "calc": 1,
+        "abs_diff": 0,
+        "pct_diff": 0.0
+      },
+      "supraventricular_bigeminy": {
+        "gt": 3,
+        "calc": 0,
+        "abs_diff": -3,
+        "pct_diff": -100.0
+      },
+      "supraventricular_trigeminy": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_svt": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "sdnn": {
+        "gt": 133,
+        "calc": 144.71890820253796,
+        "abs_diff": 11.71890820253796,
+        "pct_diff": 8.811209174840572
+      },
+      "sdann": {
+        "gt": 130,
+        "calc": 141.68655230634468,
+        "abs_diff": 11.68655230634468,
+        "pct_diff": 8.989655620265138
+      },
+      "rmssd": {
+        "gt": 21,
+        "calc": 27.75850699105949,
+        "abs_diff": 6.758506991059491,
+        "pct_diff": 32.18336662409281
+      },
+      "pnn50": {
+        "gt": 2.81,
+        "calc": 4.56817841640473,
+        "abs_diff": 1.7581784164047298,
+        "pct_diff": 62.56862691831778
+      },
+      "lf": {
+        "gt": 189,
+        "calc": 127.57792833555379,
+        "abs_diff": -61.42207166444621,
+        "pct_diff": -32.4984506161091
+      },
+      "hf": {
+        "gt": 124,
+        "calc": 191.711343804719,
+        "abs_diff": 67.71134380471901,
+        "pct_diff": 54.60592242316049
+      },
+      "lf_hf": {
+        "gt": 1.53,
+        "calc": 0.6654688543913563,
+        "abs_diff": -0.8645311456086437,
+        "pct_diff": -56.50530363455187
+      },
+      "tri_index": {
+        "gt": 33.01,
+        "calc": 31.85202492211838,
+        "abs_diff": -1.1579750778816162,
+        "pct_diff": -3.5079523716498526
+      }
+    }
+  },
+  {
+    "record_id": "2508040821247597",
+    "diffs": {
+      "total_beats": {
+        "gt": 98991,
+        "calc": 98994,
+        "abs_diff": 3,
+        "pct_diff": 0.003030578537442798
+      },
+      "avg_hr": {
+        "gt": 70,
+        "calc": 67.64116943308824,
+        "abs_diff": -2.358830566911763,
+        "pct_diff": -3.3697579527310904
+      },
+      "max_hr": {
+        "gt": 139,
+        "calc": 130.0793626380387,
+        "abs_diff": -8.920637361961298,
+        "pct_diff": -6.417724720835466
+      },
+      "min_hr": {
+        "gt": 53,
+        "calc": 52.21160002572804,
+        "abs_diff": -0.788399974271961,
+        "pct_diff": -1.4875471212678508
+      },
+      "max_rr": {
+        "gt": 1.336,
+        "calc": 1.56,
+        "abs_diff": 0.22399999999999998,
+        "pct_diff": 16.76646706586826
+      },
+      "ventricular_total": {
+        "gt": 0,
+        "calc": 25,
+        "abs_diff": 25,
+        "pct_diff": 0
+      },
+      "ventricular_single": {
+        "gt": 0,
+        "calc": 23,
+        "abs_diff": 23,
+        "pct_diff": 0
+      },
+      "ventricular_pair": {
+        "gt": 0,
+        "calc": 1,
+        "abs_diff": 1,
+        "pct_diff": 0
+      },
+      "ventricular_bigeminy": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "ventricular_trigeminy": {
+        "gt": 0,
+        "calc": 1,
+        "abs_diff": 1,
+        "pct_diff": 0
+      },
+      "ventricular_vt": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_total": {
+        "gt": 80,
+        "calc": 2,
+        "abs_diff": -78,
+        "pct_diff": -97.5
+      },
+      "supraventricular_single": {
+        "gt": 71,
+        "calc": 2,
+        "abs_diff": -69,
+        "pct_diff": -97.1830985915493
+      },
+      "supraventricular_pair": {
+        "gt": 2,
+        "calc": 0,
+        "abs_diff": -2,
+        "pct_diff": -100.0
+      },
+      "supraventricular_bigeminy": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_trigeminy": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_svt": {
+        "gt": 1,
+        "calc": 0,
+        "abs_diff": -1,
+        "pct_diff": -100.0
+      },
+      "sdnn": {
+        "gt": 138,
+        "calc": 147.76999474036572,
+        "abs_diff": 9.769994740365718,
+        "pct_diff": 7.079706333598345
+      },
+      "sdann": {
+        "gt": 113,
+        "calc": 125.2494199971821,
+        "abs_diff": 12.249419997182102,
+        "pct_diff": 10.840194687771772
+      },
+      "rmssd": {
+        "gt": 24,
+        "calc": 24.414435935066418,
+        "abs_diff": 0.4144359350664182,
+        "pct_diff": 1.7268163961100758
+      },
+      "pnn50": {
+        "gt": 3.7,
+        "calc": 4.1783126162477515,
+        "abs_diff": 0.47831261624775134,
+        "pct_diff": 12.927368006695982
+      },
+      "lf": {
+        "gt": 192,
+        "calc": 97.60200187737526,
+        "abs_diff": -94.39799812262474,
+        "pct_diff": -49.16562402220039
+      },
+      "hf": {
+        "gt": 117,
+        "calc": 104.42270571450784,
+        "abs_diff": -12.577294285492158,
+        "pct_diff": -10.749824175634323
+      },
+      "lf_hf": {
+        "gt": 1.63,
+        "calc": 0.934681793672533,
+        "abs_diff": -0.6953182063274669,
+        "pct_diff": -42.657558670396746
+      },
+      "tri_index": {
+        "gt": 34.37,
+        "calc": 29.40411571726812,
+        "abs_diff": -4.965884282731878,
+        "pct_diff": -14.448310394913817
+      }
+    }
+  },
+  {
+    "record_id": "2508040853501446",
+    "diffs": {
+      "total_beats": {
+        "gt": 93799,
+        "calc": 95801,
+        "abs_diff": 2002,
+        "pct_diff": 2.1343511124852075
+      },
+      "avg_hr": {
+        "gt": 70,
+        "calc": 73.34363402897901,
+        "abs_diff": 3.343634028979011,
+        "pct_diff": 4.776620041398587
+      },
+      "max_hr": {
+        "gt": 151,
+        "calc": 142.4751718869366,
+        "abs_diff": -8.524828113063393,
+        "pct_diff": -5.645581531830062
+      },
+      "min_hr": {
+        "gt": 35,
+        "calc": 37.29059748997718,
+        "abs_diff": 2.2905974899771806,
+        "pct_diff": 6.544564257077659
+      },
+      "max_rr": {
+        "gt": 1.842,
+        "calc": 2.248,
+        "abs_diff": 0.40600000000000014,
+        "pct_diff": 22.041259500542896
+      },
+      "ventricular_total": {
+        "gt": 0,
+        "calc": 109,
+        "abs_diff": 109,
+        "pct_diff": 0
+      },
+      "ventricular_single": {
+        "gt": 0,
+        "calc": 88,
+        "abs_diff": 88,
+        "pct_diff": 0
+      },
+      "ventricular_pair": {
+        "gt": 0,
+        "calc": 9,
+        "abs_diff": 9,
+        "pct_diff": 0
+      },
+      "ventricular_bigeminy": {
+        "gt": 0,
+        "calc": 3,
+        "abs_diff": 3,
+        "pct_diff": 0
+      },
+      "ventricular_trigeminy": {
+        "gt": 0,
+        "calc": 4,
+        "abs_diff": 4,
+        "pct_diff": 0
+      },
+      "ventricular_vt": {
+        "gt": 0,
+        "calc": 1,
+        "abs_diff": 1,
+        "pct_diff": 0
+      },
+      "supraventricular_total": {
+        "gt": 1,
+        "calc": 196,
+        "abs_diff": 195,
+        "pct_diff": 19500.0
+      },
+      "supraventricular_single": {
+        "gt": 1,
+        "calc": 157,
+        "abs_diff": 156,
+        "pct_diff": 15600.0
+      },
+      "supraventricular_pair": {
+        "gt": 0,
+        "calc": 14,
+        "abs_diff": 14,
+        "pct_diff": 0
+      },
+      "supraventricular_bigeminy": {
+        "gt": 0,
+        "calc": 9,
+        "abs_diff": 9,
+        "pct_diff": 0
+      },
+      "supraventricular_trigeminy": {
+        "gt": 0,
+        "calc": 2,
+        "abs_diff": 2,
+        "pct_diff": 0
+      },
+      "supraventricular_svt": {
+        "gt": 0,
+        "calc": 3,
+        "abs_diff": 3,
+        "pct_diff": 0
+      },
+      "sdnn": {
+        "gt": 282,
+        "calc": 276.05008049913914,
+        "abs_diff": -5.949919500860858,
+        "pct_diff": -2.1099005322201623
+      },
+      "sdann": {
+        "gt": 284,
+        "calc": 277.3111799917605,
+        "abs_diff": -6.688820008239475,
+        "pct_diff": -2.3552183127603783
+      },
+      "rmssd": {
+        "gt": 113,
+        "calc": 91.80073338729792,
+        "abs_diff": -21.199266612702075,
+        "pct_diff": -18.760412931594757
+      },
+      "pnn50": {
+        "gt": 43.31,
+        "calc": 40.137192571524174,
+        "abs_diff": -3.172807428475828,
+        "pct_diff": -7.325807962308538
+      },
+      "lf": {
+        "gt": 2708,
+        "calc": 1146.2847853639203,
+        "abs_diff": -1561.7152146360797,
+        "pct_diff": -57.670428900889206
+      },
+      "hf": {
+        "gt": 2876,
+        "calc": 1237.8731394084878,
+        "abs_diff": -1638.1268605915122,
+        "pct_diff": -56.95851392877302
+      },
+      "lf_hf": {
+        "gt": 0.94,
+        "calc": 0.9260115183625903,
+        "abs_diff": -0.013988481637409622,
+        "pct_diff": -1.488136344405279
+      },
+      "tri_index": {
+        "gt": 62.48,
+        "calc": 58.19762845849802,
+        "abs_diff": -4.282371541501973,
+        "pct_diff": -6.8539877424807525
+      }
+    }
+  },
+  {
+    "record_id": "2508040855572068",
+    "diffs": {
+      "total_beats": {
+        "gt": 99566,
+        "calc": 99420,
+        "abs_diff": -146,
+        "pct_diff": -0.14663640198461322
+      },
+      "avg_hr": {
+        "gt": 72,
+        "calc": 69.7012296886091,
+        "abs_diff": -2.2987703113908964,
+        "pct_diff": -3.192736543598467
+      },
+      "max_hr": {
+        "gt": 115,
+        "calc": 107.58651286601597,
+        "abs_diff": -7.4134871339840345,
+        "pct_diff": -6.446510551290465
+      },
+      "min_hr": {
+        "gt": 50,
+        "calc": 50.281050095735125,
+        "abs_diff": 0.2810500957351252,
+        "pct_diff": 0.5621001914702504
+      },
+      "max_rr": {
+        "gt": 1.468,
+        "calc": 1.456,
+        "abs_diff": -0.01200000000000001,
+        "pct_diff": -0.8174386920980934
+      },
+      "ventricular_total": {
+        "gt": 51,
+        "calc": 352,
+        "abs_diff": 301,
+        "pct_diff": 590.1960784313726
+      },
+      "ventricular_single": {
+        "gt": 51,
+        "calc": 286,
+        "abs_diff": 235,
+        "pct_diff": 460.78431372549016
+      },
+      "ventricular_pair": {
+        "gt": 0,
+        "calc": 33,
+        "abs_diff": 33,
+        "pct_diff": 0
+      },
+      "ventricular_bigeminy": {
+        "gt": 0,
+        "calc": 15,
+        "abs_diff": 15,
+        "pct_diff": 0
+      },
+      "ventricular_trigeminy": {
+        "gt": 0,
+        "calc": 19,
+        "abs_diff": 19,
+        "pct_diff": 0
+      },
+      "ventricular_vt": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_total": {
+        "gt": 619,
+        "calc": 12,
+        "abs_diff": -607,
+        "pct_diff": -98.06138933764136
+      },
+      "supraventricular_single": {
+        "gt": 607,
+        "calc": 12,
+        "abs_diff": -595,
+        "pct_diff": -98.02306425041186
+      },
+      "supraventricular_pair": {
+        "gt": 1,
+        "calc": 0,
+        "abs_diff": -1,
+        "pct_diff": -100.0
+      },
+      "supraventricular_bigeminy": {
+        "gt": 4,
+        "calc": 0,
+        "abs_diff": -4,
+        "pct_diff": -100.0
+      },
+      "supraventricular_trigeminy": {
+        "gt": 3,
+        "calc": 0,
+        "abs_diff": -3,
+        "pct_diff": -100.0
+      },
+      "supraventricular_svt": {
+        "gt": 2,
+        "calc": 0,
+        "abs_diff": -2,
+        "pct_diff": -100.0
+      },
+      "sdnn": {
+        "gt": 137,
+        "calc": 148.35090269745015,
+        "abs_diff": 11.350902697450152,
+        "pct_diff": 8.285330436095002
+      },
+      "sdann": {
+        "gt": 130,
+        "calc": 141.00429578330562,
+        "abs_diff": 11.004295783305622,
+        "pct_diff": 8.464842910235095
+      },
+      "rmssd": {
+        "gt": 23,
+        "calc": 26.511569529197907,
+        "abs_diff": 3.5115695291979065,
+        "pct_diff": 15.26769360520829
+      },
+      "pnn50": {
+        "gt": 3.88,
+        "calc": 4.74143833812639,
+        "abs_diff": 0.8614383381263897,
+        "pct_diff": 22.202019023876023
+      },
+      "lf": {
+        "gt": 278,
+        "calc": 128.02276927074928,
+        "abs_diff": -149.97723072925072,
+        "pct_diff": -53.94864414721249
+      },
+      "hf": {
+        "gt": 185,
+        "calc": 179.9690881081993,
+        "abs_diff": -5.030911891800713,
+        "pct_diff": -2.719411833405791
+      },
+      "lf_hf": {
+        "gt": 1.5,
+        "calc": 0.7113597708167564,
+        "abs_diff": -0.7886402291832436,
+        "pct_diff": -52.576015278882906
+      },
+      "tri_index": {
+        "gt": 34.37,
+        "calc": 33.76567425569177,
+        "abs_diff": -0.6043257443082268,
+        "pct_diff": -1.7582942807920479
+      }
+    }
+  },
+  {
+    "record_id": "2508040901193373",
+    "diffs": {
+      "total_beats": {
+        "gt": 75567,
+        "calc": 76115,
+        "abs_diff": 548,
+        "pct_diff": 0.7251842735585639
+      },
+      "avg_hr": {
+        "gt": 54,
+        "calc": 53.29996527688607,
+        "abs_diff": -0.7000347231139301,
+        "pct_diff": -1.2963605983591298
+      },
+      "max_hr": {
+        "gt": 84,
+        "calc": 78.13178241996744,
+        "abs_diff": -5.868217580032564,
+        "pct_diff": -6.985973309562576
+      },
+      "min_hr": {
+        "gt": 40,
+        "calc": 38.68076279532067,
+        "abs_diff": -1.3192372046793324,
+        "pct_diff": -3.298093011698331
+      },
+      "max_rr": {
+        "gt": 1.604,
+        "calc": 1.712,
+        "abs_diff": 0.10799999999999987,
+        "pct_diff": 6.733167082294256
+      },
+      "ventricular_total": {
+        "gt": 70,
+        "calc": 70,
+        "abs_diff": 0,
+        "pct_diff": 0.0
+      },
+      "ventricular_single": {
+        "gt": 68,
+        "calc": 60,
+        "abs_diff": -8,
+        "pct_diff": -11.76470588235294
+      },
+      "ventricular_pair": {
+        "gt": 1,
+        "calc": 5,
+        "abs_diff": 4,
+        "pct_diff": 400.0
+      },
+      "ventricular_bigeminy": {
+        "gt": 1,
+        "calc": 6,
+        "abs_diff": 5,
+        "pct_diff": 500.0
+      },
+      "ventricular_trigeminy": {
+        "gt": 1,
+        "calc": 2,
+        "abs_diff": 1,
+        "pct_diff": 100.0
+      },
+      "ventricular_vt": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_total": {
+        "gt": 16,
+        "calc": 6,
+        "abs_diff": -10,
+        "pct_diff": -62.5
+      },
+      "supraventricular_single": {
+        "gt": 14,
+        "calc": 6,
+        "abs_diff": -8,
+        "pct_diff": -57.14285714285714
+      },
+      "supraventricular_pair": {
+        "gt": 1,
+        "calc": 0,
+        "abs_diff": -1,
+        "pct_diff": -100.0
+      },
+      "supraventricular_bigeminy": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_trigeminy": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_svt": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "sdnn": {
+        "gt": 183,
+        "calc": 195.7735850071934,
+        "abs_diff": 12.77358500719339,
+        "pct_diff": 6.980101096826989
+      },
+      "sdann": {
+        "gt": 175,
+        "calc": 187.87940278620474,
+        "abs_diff": 12.879402786204736,
+        "pct_diff": 7.359658734974135
+      },
+      "rmssd": {
+        "gt": 30,
+        "calc": 34.04989864305915,
+        "abs_diff": 4.0498986430591515,
+        "pct_diff": 13.499662143530506
+      },
+      "pnn50": {
+        "gt": 9.46,
+        "calc": 10.53833955976026,
+        "abs_diff": 1.0783395597602592,
+        "pct_diff": 11.39893826385052
+      },
+      "lf": {
+        "gt": 294,
+        "calc": 109.06906063819011,
+        "abs_diff": -184.9309393618099,
+        "pct_diff": -62.90168005503738
+      },
+      "hf": {
+        "gt": 189,
+        "calc": 151.90303416249992,
+        "abs_diff": -37.09696583750008,
+        "pct_diff": -19.628024252645545
+      },
+      "lf_hf": {
+        "gt": 1.56,
+        "calc": 0.7180176567211443,
+        "abs_diff": -0.8419823432788558,
+        "pct_diff": -53.97322713325998
+      },
+      "tri_index": {
+        "gt": 57.86,
+        "calc": 58.1644685802948,
+        "abs_diff": 0.3044685802948024,
+        "pct_diff": 0.5262160046574532
+      }
+    }
+  },
+  {
+    "record_id": "2508040904136424",
+    "diffs": {
+      "total_beats": {
+        "gt": 94426,
+        "calc": 94517,
+        "abs_diff": 91,
+        "pct_diff": 0.09637176201469934
+      },
+      "avg_hr": {
+        "gt": 69,
+        "calc": 67.14444099529784,
+        "abs_diff": -1.8555590047021582,
+        "pct_diff": -2.6892159488437075
+      },
+      "max_hr": {
+        "gt": 138,
+        "calc": 129.7012622145662,
+        "abs_diff": -8.298737785433786,
+        "pct_diff": -6.013578105386802
+      },
+      "min_hr": {
+        "gt": 50,
+        "calc": 48.69520547401829,
+        "abs_diff": -1.3047945259817126,
+        "pct_diff": -2.6095890519634253
+      },
+      "max_rr": {
+        "gt": 1.472,
+        "calc": 1.424,
+        "abs_diff": -0.04800000000000004,
+        "pct_diff": -3.260869565217394
+      },
+      "ventricular_total": {
+        "gt": 9,
+        "calc": 154,
+        "abs_diff": 145,
+        "pct_diff": 1611.111111111111
+      },
+      "ventricular_single": {
+        "gt": 9,
+        "calc": 139,
+        "abs_diff": 130,
+        "pct_diff": 1444.4444444444446
+      },
+      "ventricular_pair": {
+        "gt": 0,
+        "calc": 6,
+        "abs_diff": 6,
+        "pct_diff": 0
+      },
+      "ventricular_bigeminy": {
+        "gt": 0,
+        "calc": 5,
+        "abs_diff": 5,
+        "pct_diff": 0
+      },
+      "ventricular_trigeminy": {
+        "gt": 0,
+        "calc": 2,
+        "abs_diff": 2,
+        "pct_diff": 0
+      },
+      "ventricular_vt": {
+        "gt": 0,
+        "calc": 1,
+        "abs_diff": 1,
+        "pct_diff": 0
+      },
+      "supraventricular_total": {
+        "gt": 18,
+        "calc": 8,
+        "abs_diff": -10,
+        "pct_diff": -55.55555555555556
+      },
+      "supraventricular_single": {
+        "gt": 15,
+        "calc": 8,
+        "abs_diff": -7,
+        "pct_diff": -46.666666666666664
+      },
+      "supraventricular_pair": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_bigeminy": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_trigeminy": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_svt": {
+        "gt": 1,
+        "calc": 0,
+        "abs_diff": -1,
+        "pct_diff": -100.0
+      },
+      "sdnn": {
+        "gt": 163,
+        "calc": 174.402566365098,
+        "abs_diff": 11.40256636509801,
+        "pct_diff": 6.995439487790191
+      },
+      "sdann": {
+        "gt": 142,
+        "calc": 151.59588713952735,
+        "abs_diff": 9.595887139527349,
+        "pct_diff": 6.757666999667148
+      },
+      "rmssd": {
+        "gt": 27,
+        "calc": 29.819215916779573,
+        "abs_diff": 2.819215916779573,
+        "pct_diff": 10.441540432516936
+      },
+      "pnn50": {
+        "gt": 6.31,
+        "calc": 7.033571004159239,
+        "abs_diff": 0.7235710041592398,
+        "pct_diff": 11.467052363854831
+      },
+      "lf": {
+        "gt": 395,
+        "calc": 190.20382799778793,
+        "abs_diff": -204.79617200221207,
+        "pct_diff": -51.847132152458755
+      },
+      "hf": {
+        "gt": 196,
+        "calc": 159.27020514444018,
+        "abs_diff": -36.72979485555982,
+        "pct_diff": -18.73969125283664
+      },
+      "lf_hf": {
+        "gt": 2.01,
+        "calc": 1.1942210272492235,
+        "abs_diff": -0.8157789727507763,
+        "pct_diff": -40.58601854481474
+      },
+      "tri_index": {
+        "gt": 45.76,
+        "calc": 47.195097548774385,
+        "abs_diff": 1.4350975487743867,
+        "pct_diff": 3.136139748195775
+      }
+    }
+  },
+  {
+    "record_id": "2508040915483338",
+    "diffs": {
+      "total_beats": {
+        "gt": 93897,
+        "calc": 93934,
+        "abs_diff": 37,
+        "pct_diff": 0.03940487981511656
+      },
+      "avg_hr": {
+        "gt": 68,
+        "calc": 65.65521090831835,
+        "abs_diff": -2.3447890916816476,
+        "pct_diff": -3.4482192524730113
+      },
+      "max_hr": {
+        "gt": 107,
+        "calc": 101.0126668021405,
+        "abs_diff": -5.987333197859499,
+        "pct_diff": -5.595638502672429
+      },
+      "min_hr": {
+        "gt": 48,
+        "calc": 46.982244813690606,
+        "abs_diff": -1.0177551863093939,
+        "pct_diff": -2.1203233048112375
+      },
+      "max_rr": {
+        "gt": 1.461,
+        "calc": 1.536,
+        "abs_diff": 0.07499999999999996,
+        "pct_diff": 5.133470225872687
+      },
+      "ventricular_total": {
+        "gt": 0,
+        "calc": 62,
+        "abs_diff": 62,
+        "pct_diff": 0
+      },
+      "ventricular_single": {
+        "gt": 0,
+        "calc": 54,
+        "abs_diff": 54,
+        "pct_diff": 0
+      },
+      "ventricular_pair": {
+        "gt": 0,
+        "calc": 4,
+        "abs_diff": 4,
+        "pct_diff": 0
+      },
+      "ventricular_bigeminy": {
+        "gt": 0,
+        "calc": 4,
+        "abs_diff": 4,
+        "pct_diff": 0
+      },
+      "ventricular_trigeminy": {
+        "gt": 0,
+        "calc": 1,
+        "abs_diff": 1,
+        "pct_diff": 0
+      },
+      "ventricular_vt": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_total": {
+        "gt": 50,
+        "calc": 7,
+        "abs_diff": -43,
+        "pct_diff": -86.0
+      },
+      "supraventricular_single": {
+        "gt": 41,
+        "calc": 7,
+        "abs_diff": -34,
+        "pct_diff": -82.92682926829268
+      },
+      "supraventricular_pair": {
+        "gt": 3,
+        "calc": 0,
+        "abs_diff": -3,
+        "pct_diff": -100.0
+      },
+      "supraventricular_bigeminy": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_trigeminy": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_svt": {
+        "gt": 1,
+        "calc": 0,
+        "abs_diff": -1,
+        "pct_diff": -100.0
+      },
+      "sdnn": {
+        "gt": 135,
+        "calc": 144.16633731637242,
+        "abs_diff": 9.16633731637242,
+        "pct_diff": 6.789879493609201
+      },
+      "sdann": {
+        "gt": 123,
+        "calc": 132.9798106960135,
+        "abs_diff": 9.979810696013487,
+        "pct_diff": 8.113667232531292
+      },
+      "rmssd": {
+        "gt": 38,
+        "calc": 38.97632612965035,
+        "abs_diff": 0.9763261296503529,
+        "pct_diff": 2.56927928855356
+      },
+      "pnn50": {
+        "gt": 10.36,
+        "calc": 10.582514913624145,
+        "abs_diff": 0.22251491362414555,
+        "pct_diff": 2.1478273515844166
+      },
+      "lf": {
+        "gt": 1199,
+        "calc": 485.8117806215218,
+        "abs_diff": -713.1882193784782,
+        "pct_diff": -59.481919881441044
+      },
+      "hf": {
+        "gt": 320,
+        "calc": 244.90247969073997,
+        "abs_diff": -75.09752030926003,
+        "pct_diff": -23.467975096643762
+      },
+      "lf_hf": {
+        "gt": 3.75,
+        "calc": 1.9836948210365175,
+        "abs_diff": -1.7663051789634825,
+        "pct_diff": -47.1014714390262
+      },
+      "tri_index": {
+        "gt": 35.01,
+        "calc": 32.93103448275862,
+        "abs_diff": -2.078965517241379,
+        "pct_diff": -5.9382048478759755
+      }
+    }
+  },
+  {
+    "record_id": "2508040920502508",
+    "diffs": {
+      "total_beats": {
+        "gt": 77927,
+        "calc": 78462,
+        "abs_diff": 535,
+        "pct_diff": 0.6865399668920913
+      },
+      "avg_hr": {
+        "gt": 57,
+        "calc": 56.66372050939906,
+        "abs_diff": -0.336279490600937,
+        "pct_diff": -0.5899640185981351
+      },
+      "max_hr": {
+        "gt": 108,
+        "calc": 102.74743922004195,
+        "abs_diff": -5.252560779958046,
+        "pct_diff": -4.863482203664857
+      },
+      "min_hr": {
+        "gt": 40,
+        "calc": 39.56216894487219,
+        "abs_diff": -0.43783105512780907,
+        "pct_diff": -1.0945776378195227
+      },
+      "max_rr": {
+        "gt": 1.597,
+        "calc": 1.768,
+        "abs_diff": 0.17100000000000004,
+        "pct_diff": 10.70757670632436
+      },
+      "ventricular_total": {
+        "gt": 3,
+        "calc": 610,
+        "abs_diff": 607,
+        "pct_diff": 20233.333333333336
+      },
+      "ventricular_single": {
+        "gt": 3,
+        "calc": 493,
+        "abs_diff": 490,
+        "pct_diff": 16333.333333333334
+      },
+      "ventricular_pair": {
+        "gt": 0,
+        "calc": 49,
+        "abs_diff": 49,
+        "pct_diff": 0
+      },
+      "ventricular_bigeminy": {
+        "gt": 0,
+        "calc": 41,
+        "abs_diff": 41,
+        "pct_diff": 0
+      },
+      "ventricular_trigeminy": {
+        "gt": 0,
+        "calc": 41,
+        "abs_diff": 41,
+        "pct_diff": 0
+      },
+      "ventricular_vt": {
+        "gt": 0,
+        "calc": 6,
+        "abs_diff": 6,
+        "pct_diff": 0
+      },
+      "supraventricular_total": {
+        "gt": 21,
+        "calc": 35,
+        "abs_diff": 14,
+        "pct_diff": 66.66666666666666
+      },
+      "supraventricular_single": {
+        "gt": 21,
+        "calc": 33,
+        "abs_diff": 12,
+        "pct_diff": 57.14285714285714
+      },
+      "supraventricular_pair": {
+        "gt": 0,
+        "calc": 1,
+        "abs_diff": 1,
+        "pct_diff": 0
+      },
+      "supraventricular_bigeminy": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_trigeminy": {
+        "gt": 0,
+        "calc": 2,
+        "abs_diff": 2,
+        "pct_diff": 0
+      },
+      "supraventricular_svt": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "sdnn": {
+        "gt": 194,
+        "calc": 208.24949661286647,
+        "abs_diff": 14.249496612866466,
+        "pct_diff": 7.345101346838384
+      },
+      "sdann": {
+        "gt": 169,
+        "calc": 182.52784833224615,
+        "abs_diff": 13.527848332246151,
+        "pct_diff": 8.004643983577605
+      },
+      "rmssd": {
+        "gt": 34,
+        "calc": 38.458279595612716,
+        "abs_diff": 4.458279595612716,
+        "pct_diff": 13.112587045919751
+      },
+      "pnn50": {
+        "gt": 11.02,
+        "calc": 12.3961845782437,
+        "abs_diff": 1.3761845782437003,
+        "pct_diff": 12.488063323445557
+      },
+      "lf": {
+        "gt": 979,
+        "calc": 363.81647373021787,
+        "abs_diff": -615.1835262697821,
+        "pct_diff": -62.8379495679042
+      },
+      "hf": {
+        "gt": 202,
+        "calc": 196.3470001438472,
+        "abs_diff": -5.652999856152803,
+        "pct_diff": -2.798514780273665
+      },
+      "lf_hf": {
+        "gt": 4.85,
+        "calc": 1.852926061837867,
+        "abs_diff": -2.9970739381621327,
+        "pct_diff": -61.795338931178
+      },
+      "tri_index": {
+        "gt": 64.75,
+        "calc": 63.1863711001642,
+        "abs_diff": -1.5636288998357983,
+        "pct_diff": -2.4148708877772944
+      }
+    }
+  },
+  {
+    "record_id": "2508040930572143",
+    "diffs": {
+      "total_beats": {
+        "gt": 109686,
+        "calc": 109720,
+        "abs_diff": 34,
+        "pct_diff": 0.03099757489561111
+      },
+      "avg_hr": {
+        "gt": 81,
+        "calc": 78.7224603034485,
+        "abs_diff": -2.2775396965515,
+        "pct_diff": -2.81177740315
+      },
+      "max_hr": {
+        "gt": 149,
+        "calc": 140.1991614255765,
+        "abs_diff": -8.800838574423494,
+        "pct_diff": -5.906603070082881
+      },
+      "min_hr": {
+        "gt": 48,
+        "calc": 52.27803287620208,
+        "abs_diff": 4.278032876202083,
+        "pct_diff": 8.912568492087674
+      },
+      "max_rr": {
+        "gt": 1.358,
+        "calc": 1.44,
+        "abs_diff": 0.08199999999999985,
+        "pct_diff": 6.038291605301903
+      },
+      "ventricular_total": {
+        "gt": 22,
+        "calc": 33,
+        "abs_diff": 11,
+        "pct_diff": 50.0
+      },
+      "ventricular_single": {
+        "gt": 22,
+        "calc": 25,
+        "abs_diff": 3,
+        "pct_diff": 13.636363636363635
+      },
+      "ventricular_pair": {
+        "gt": 0,
+        "calc": 4,
+        "abs_diff": 4,
+        "pct_diff": 0
+      },
+      "ventricular_bigeminy": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "ventricular_trigeminy": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "ventricular_vt": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_total": {
+        "gt": 2,
+        "calc": 19,
+        "abs_diff": 17,
+        "pct_diff": 850.0
+      },
+      "supraventricular_single": {
+        "gt": 2,
+        "calc": 19,
+        "abs_diff": 17,
+        "pct_diff": 850.0
+      },
+      "supraventricular_pair": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_bigeminy": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_trigeminy": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "supraventricular_svt": {
+        "gt": 0,
+        "calc": 0,
+        "abs_diff": 0,
+        "pct_diff": 0
+      },
+      "sdnn": {
+        "gt": 154,
+        "calc": 164.37494963335516,
+        "abs_diff": 10.374949633355158,
+        "pct_diff": 6.736980281399453
+      },
+      "sdann": {
+        "gt": 150,
+        "calc": 161.26143870042128,
+        "abs_diff": 11.26143870042128,
+        "pct_diff": 7.507625800280854
+      },
+      "rmssd": {
+        "gt": 21,
+        "calc": 22.894978663361233,
+        "abs_diff": 1.8949786633612327,
+        "pct_diff": 9.023707920767775
+      },
+      "pnn50": {
+        "gt": 2.96,
+        "calc": 3.3305046855182354,
+        "abs_diff": 0.37050468551823545,
+        "pct_diff": 12.517050186426873
+      },
+      "lf": {
+        "gt": 296,
+        "calc": 152.40268819893137,
+        "abs_diff": -143.59731180106863,
+        "pct_diff": -48.51260533819886
+      },
+      "hf": {
+        "gt": 157,
+        "calc": 159.80665453735196,
+        "abs_diff": 2.8066545373519602,
+        "pct_diff": 1.7876780492687645
+      },
+      "lf_hf": {
+        "gt": 1.88,
+        "calc": 0.9536692238514383,
+        "abs_diff": -0.9263307761485616,
+        "pct_diff": -49.27291362492349
+      },
+      "tri_index": {
+        "gt": 32.3,
+        "calc": 32.927327327327326,
+        "abs_diff": 0.627327327327329,
+        "pct_diff": 1.9421898678864675
+      }
+    }
+  }
+]

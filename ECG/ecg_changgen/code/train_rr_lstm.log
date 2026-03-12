@@ -1,0 +1,28 @@
+2026-01-24 20:09:30.469644: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-01-24 20:09:33.265075: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-01-24 20:10:21.944139: E tensorflow/compiler/xla/stream_executor/cuda/cuda_driver.cc:268] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+Loading data...
+Data shape: (54325, 30, 1), Labels shape: (54325,)
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ lstm (LSTM)                 (None, 30, 64)            16896     
+                                                                 
+ dropout (Dropout)           (None, 30, 64)            0         
+                                                                 
+ lstm_1 (LSTM)               (None, 32)                12416     
+                                                                 
+ dropout_1 (Dropout)         (None, 32)                0         
+                                                                 
+ dense (Dense)               (None, 32)                1056      
+                                                                 
+ dense_1 (Dense)             (None, 5)                 165       
+                                                                 
+=================================================================
+Total params: 30533 (119.27 KB)
+Trainable params: 30533 (119.27 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+Epoch 1/20

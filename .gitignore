@@ -1,0 +1,75 @@
+# ============================================
+# 数据集文件 - 不上传到 GitHub
+# ============================================
+
+# ECG/ecg_changgen 数据集
+ECG/ecg_changgen/DMdata/
+ECG/ecg_changgen/DMdata.zip
+ECG/ecg_changgen/另10个数据20260203.rar
+ECG/ecg_changgen/real_data/
+ECG/ecg_changgen/train_data/
+ECG/ecg_changgen/train_hospital/
+
+# ECG/ecg_changgen 验证结果中的大量预测CSV
+ECG/ecg_changgen/validation_results/processed/
+ECG/ecg_changgen/validation_results_v3/processed/
+
+# PTB-XL 公开数据集
+ECG/PTB-XL/ptbxl_records500/
+ECG/PTB-XL/ptbxl_records500.zip
+ECG/PTB-XL/SHA256SUMS.txt
+ECG/PTB-XL/RECORDS.txt
+ECG/PTB-XL/__MACOSX/
+
+# ptbxl_rr_dataset_builder 处理后的数据集
+ECG/ptbxl_rr_dataset_builder/output_ptbxl/
+ECG/ptbxl_rr_dataset_builder/output_ptbxl_ectopy/
+ECG/ptbxl_rr_dataset_builder/output_ptbxl_rhythm/
+ECG/ptbxl_rr_dataset_builder/output_ptbxl_rhythm_hw_f16/
+ECG/ptbxl_rr_dataset_builder/output_ptbxl_rhythm_hw_f16_2conv/
+
+# validation_results（顶层）
+ECG/validation_results/processed/
+
+# torch_ecg（已有独立git仓库，作为submodule管理）
+ECG/torch_ecg/
+
+# ============================================
+# 通用忽略规则
+# ============================================
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 环境
+.env
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 大文件通用
+*.zip
+*.rar
+*.tar.gz
+*.7z
+!ECG/ecg_changgen/model/*.h5

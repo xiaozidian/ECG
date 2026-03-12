@@ -1,0 +1,38 @@
+{
+  "total_samples": 2002129,
+  "class_distribution": {
+    "0": {
+      "name": "N (正常)",
+      "total": 1992371,
+      "train": 1593896,
+      "test": 398475,
+      "percentage": 99.51261881726901
+    },
+    "1": {
+      "name": "S (室上性早搏)",
+      "total": 4334,
+      "train": 3467,
+      "test": 867,
+      "percentage": 0.21646956814470997
+    },
+    "2": {
+      "name": "V (室性早搏)",
+      "total": 5424,
+      "train": 4339,
+      "test": 1085,
+      "percentage": 0.2709116145862729
+    }
+  },
+  "imbalance_ratio": 459.70719889247806,
+  "min_samples": 4334,
+  "mitbih_comparison": {
+    "S": {
+      "mitbih": 2779,
+      "current": 4334
+    },
+    "V": {
+      "mitbih": 7236,
+      "current": 5424
+    }
+  }
+}

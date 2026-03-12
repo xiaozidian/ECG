@@ -1,0 +1,123 @@
+2026-01-25 03:26:09.617979: I tensorflow/core/util/port.cc:110] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-01-25 03:26:10.536678: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-01-25 03:26:11.965873: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-01-25 03:26:13.654220: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2026-01-25 03:26:14.036111: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2026-01-25 03:26:14.036281: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+Python: /home/vipuser/miniconda3/bin/python
+TensorFlow: 2.13.1
+Visible GPUs: [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+Scanning data files...
+Calculating total dataset size...
+Total samples found: 954757
+Pre-allocating memory...
+Loading X_2508040816266615.npy...
+Loading X_2508040816576026.npy...
+Loading X_2508040821247597.npy...
+Loading X_2508040853501446.npy...
+Loading X_2508040855572068.npy...
+Loading X_2508040901193373.npy...
+Loading X_2508040904136424.npy...
+Loading X_2508040915483338.npy...
+Loading X_2508040920502508.npy...
+Loading X_2508040930572143.npy...
+All data loaded into memory.
+Splitting data...
+Train shape: (763805, 748, 1)
+Test shape: (190952, 748, 1)
+Computed Class Weights: {0: 0.3361419796687804, 1: 123.59304207119742, 2: 58.90829862717877}
+Class Priors: [0.9916444420814514, 0.0026970235630869865, 0.005658512469381094]
+Moving data to GPU memory...
+2026-01-25 03:26:31.684640: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2026-01-25 03:26:31.684941: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2026-01-25 03:26:31.685041: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2026-01-25 03:26:31.832394: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2026-01-25 03:26:31.832583: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2026-01-25 03:26:31.832701: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2026-01-25 03:26:31.832828: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 42115 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 4090, pci bus id: 0000:00:08.0, compute capability: 8.9
+Creating TensorFlow Datasets from GPU tensors...
+Sampling: resample, weights=[0.97, 0.015, 0.015], shuffle_buffers=[50000, 2060, 4322], steps_per_epoch=187
+Model: "model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_1 (InputLayer)        [(None, 748, 1)]          0         
+                                                                 
+ conv1d (Conv1D)             (None, 748, 16)           256       
+                                                                 
+ conv1d_1 (Conv1D)           (None, 748, 16)           3856      
+                                                                 
+ max_pooling1d (MaxPooling1  (None, 374, 16)           0         
+ D)                                                              
+                                                                 
+ dropout (Dropout)           (None, 374, 16)           0         
+                                                                 
+ conv1d_2 (Conv1D)           (None, 374, 32)           4640      
+                                                                 
+ conv1d_3 (Conv1D)           (None, 374, 32)           9248      
+                                                                 
+ max_pooling1d_1 (MaxPoolin  (None, 187, 32)           0         
+ g1D)                                                            
+                                                                 
+ dropout_1 (Dropout)         (None, 187, 32)           0         
+                                                                 
+ conv1d_4 (Conv1D)           (None, 187, 64)           10304     
+                                                                 
+ conv1d_5 (Conv1D)           (None, 187, 64)           20544     
+                                                                 
+ max_pooling1d_2 (MaxPoolin  (None, 93, 64)            0         
+ g1D)                                                            
+                                                                 
+ dropout_2 (Dropout)         (None, 93, 64)            0         
+                                                                 
+ conv1d_6 (Conv1D)           (None, 93, 256)           49408     
+                                                                 
+ conv1d_7 (Conv1D)           (None, 93, 256)           196864    
+                                                                 
+ global_max_pooling1d (Glob  (None, 256)               0         
+ alMaxPooling1D)                                                 
+                                                                 
+ dropout_3 (Dropout)         (None, 256)               0         
+                                                                 
+ dense_1 (Dense)             (None, 64)                16448     
+                                                                 
+ dense_2 (Dense)             (None, 64)                4160      
+                                                                 
+ dense_3_mitbih (Dense)      (None, 3)                 195       
+                                                                 
+=================================================================
+Total params: 315923 (1.21 MB)
+Trainable params: 315923 (1.21 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+Starting training...
+2026-01-25 03:26:40.681775: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1794] (One-time warning): Not using XLA:CPU for cluster.
+
+If you want XLA:CPU, do one of the following:
+
+ - set the TF_XLA_FLAGS to include "--tf_xla_cpu_global_jit", or
+ - set cpu_global_jit to true on this session's OptimizerOptions, or
+ - use experimental_jit_scope, or
+ - use tf.function(jit_compile=True).
+
+To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a
+proper command-line flag, not via TF_XLA_FLAGS).
+Epoch 1/2
+2026-01-25 03:26:53.537619: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:422] Filling up shuffle buffer (this may take a while): 1287 of 2060
+2026-01-25 03:26:59.514035: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:450] Shuffle buffer filled.
+2026-01-25 03:27:09.559309: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:422] Filling up shuffle buffer (this may take a while): 2592 of 4322
+2026-01-25 03:27:16.417066: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:450] Shuffle buffer filled.
+2026-01-25 03:27:17.404579: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x6f22190 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2026-01-25 03:27:17.404639: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): NVIDIA GeForce RTX 4090, Compute Capability 8.9
+2026-01-25 03:27:17.481474: W tensorflow/compiler/tf2xla/kernels/random_ops.cc:57] Warning: Using tf.random.uniform with XLA compilation will ignore seeds; consider using tf.random.stateless_uniform instead if reproducible behavior is desired. model/dropout/dropout/random_uniform/RandomUniform
+2026-01-25 03:27:17.540819: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:255] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2026-01-25 03:27:17.994386: I tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:432] Loaded cuDNN version 8600
+2026-01-25 03:27:44.194837: I ./tensorflow/compiler/jit/device_compiler.h:186] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+100/187 [===============>..............] - ETA: 2:12 - loss: 0.2297 - acc: 0.9604187/187 [==============================] - ETA: 0s - loss: 0.1884 - acc: 0.9647  
+Epoch 1: val_loss improved from inf to 0.07026, saving model to /root/project/ECG/ecg_changgen/model/clinical_cnn_mitbih_500hz.h5
+/home/vipuser/miniconda3/lib/python3.8/site-packages/keras/src/engine/training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+187/187 [==============================] - 489s 3s/step - loss: 0.1884 - acc: 0.9647 - val_loss: 0.0703 - val_acc: 0.9916 - lr: 0.0010
+Epoch 2/2

@@ -1,0 +1,87 @@
+{
+  "checkpoint": "/root/project/ECG/ptbxl_rr_dataset_builder/checkpoints/rr_cnn_binary_lite.pt",
+  "format": {
+    "encoding": "ieee754_float32",
+    "endianness": "little",
+    "word_bytes": 4,
+    "hex_chars_per_word": 8,
+    "layout": "flatten_c_order",
+    "one_word_per_line": true
+  },
+  "tensors": {
+    "conv1.weight": {
+      "file": "conv1.weight.hex",
+      "shape": [
+        3,
+        2,
+        7
+      ],
+      "dtype": "float32",
+      "numel": 42
+    },
+    "conv2.weight": {
+      "file": "conv2.weight.hex",
+      "shape": [
+        8,
+        3,
+        5
+      ],
+      "dtype": "float32",
+      "numel": 120
+    },
+    "conv3.weight": {
+      "file": "conv3.weight.hex",
+      "shape": [
+        12,
+        8,
+        5
+      ],
+      "dtype": "float32",
+      "numel": 480
+    },
+    "conv4.weight": {
+      "file": "conv4.weight.hex",
+      "shape": [
+        8,
+        12,
+        3
+      ],
+      "dtype": "float32",
+      "numel": 288
+    },
+    "fc1.weight": {
+      "file": "fc1.weight.hex",
+      "shape": [
+        64,
+        28
+      ],
+      "dtype": "float32",
+      "numel": 1792
+    },
+    "fc1.bias": {
+      "file": "fc1.bias.hex",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "numel": 64
+    },
+    "fc2.weight": {
+      "file": "fc2.weight.hex",
+      "shape": [
+        2,
+        64
+      ],
+      "dtype": "float32",
+      "numel": 128
+    },
+    "fc2.bias": {
+      "file": "fc2.bias.hex",
+      "shape": [
+        2
+      ],
+      "dtype": "float32",
+      "numel": 2
+    }
+  }
+}

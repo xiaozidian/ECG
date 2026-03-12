@@ -1,0 +1,206 @@
+{
+  "hospital": "北京清华长庚医院",
+  "reports": [
+    {
+      "patient_info": {
+        "name": "刘建华", "sex": "男", "age": 67, "id": "2508040816266615",
+        "record_time": "2025-08-04 08:16:26", "duration": "23小时42分钟", "diagnosis": "心悸"
+      },
+      "overall_stats": {
+        "total_beats": 106370,
+        "max_hr": { "value": 117, "time": "08-05 07:15:02" },
+        "min_hr": { "value": 54, "time": "08-05 01:07:15" },
+        "avg_hr": 75,
+        "longest_rr": { "value": 1.364, "time": "08-05 00:32:21" }
+      },
+      "arrhythmia_events": {
+        "ventricular": { "total": 5247, "percentage": 4.93, "single": 5245, "pair": 1, "bigeminy": 4, "trigeminy": 365, "vt": 0 },
+        "supraventricular": { "total": 5, "percentage": "< 0.1", "single": 5, "pair": 0, "bigeminy": 0, "trigeminy": 0, "svt": 0 }
+      },
+      "hrv_metrics": {
+        "sdnn": 125, "sdann": 113, "sdnn_index": 49, "rmssd": 25, "pnn50": 5.50, "lf_hf": 1.32, "tri_index": 47.58, "lf": 219, "hf": 165
+      }
+    },
+    {
+      "patient_info": {
+        "name": "张晓娟", "sex": "女", "age": 59, "id": "2508040816576026",
+        "record_time": "2025-08-04 08:16:57", "duration": "23小时52分钟", "diagnosis": "心电图异常"
+      },
+      "overall_stats": {
+        "total_beats": 104528,
+        "max_hr": { "value": 122, "time": "08-05 07:46:05" },
+        "min_hr": { "value": 51, "time": "08-05 05:04:45" },
+        "avg_hr": 73,
+        "longest_rr": { "value": 1.705, "time": "08-05 06:51:04" }
+      },
+      "arrhythmia_events": {
+        "ventricular": { "total": 0, "percentage": 0.0, "single": 0, "pair": 0, "bigeminy": 0, "trigeminy": 0, "vt": 0 },
+        "supraventricular": { "total": 1763, "percentage": 1.69, "single": 1761, "pair": 1, "bigeminy": 3, "trigeminy": 0, "svt": 0 }
+      },
+      "hrv_metrics": {
+        "sdnn": 133, "sdann": 130, "sdnn_index": 40, "rmssd": 21, "pnn50": 2.81, "lf_hf": 1.53, "tri_index": 33.01, "lf": 189, "hf": 124
+      }
+    },
+    {
+      "patient_info": {
+        "name": "窦阎", "sex": "男", "age": 66, "id": "2508040821247597",
+        "record_time": "2025-08-04 08:21:24", "duration": "23小时41分钟", "diagnosis": "高血压"
+      },
+      "overall_stats": {
+        "total_beats": 98991,
+        "max_hr": { "value": 139, "time": "08-05 07:10:09" },
+        "min_hr": { "value": 53, "time": "08-05 01:36:50" },
+        "avg_hr": 70,
+        "longest_rr": { "value": 1.336, "time": "08-04 16:48:44" }
+      },
+      "arrhythmia_events": {
+        "ventricular": { "total": 0, "percentage": 0.0, "single": 0, "pair": 0, "bigeminy": 0, "trigeminy": 0, "vt": 0 },
+        "supraventricular": { "total": 80, "percentage": "< 0.1", "single": 71, "pair": 2, "bigeminy": 0, "trigeminy": 0, "svt": 1 }
+      },
+      "hrv_metrics": {
+        "sdnn": 138, "sdann": 113, "sdnn_index": 44, "rmssd": 24, "pnn50": 3.70, "lf_hf": 1.63, "tri_index": 34.37, "lf": 192, "hf": 117
+      }
+    },
+    {
+      "patient_info": {
+        "name": "唐鑫", "sex": "女", "age": 31, "id": "2508040853501446",
+        "record_time": "2025-08-04 08:53:50", "duration": "22小时35分钟", "diagnosis": "胸闷"
+      },
+      "overall_stats": {
+        "total_beats": 93799,
+        "max_hr": { "value": 151, "time": "08-05 06:01:53" },
+        "min_hr": { "value": 35, "time": "08-05 04:51:26" },
+        "avg_hr": 70,
+        "longest_rr": { "value": 1.842, "time": "08-05 04:22:08" }
+      },
+      "arrhythmia_events": {
+        "ventricular": { "total": 0, "percentage": 0.0, "single": 0, "pair": 0, "bigeminy": 0, "trigeminy": 0, "vt": 0 },
+        "supraventricular": { "total": 1, "percentage": "< 0.1", "single": 1, "pair": 0, "bigeminy": 0, "trigeminy": 0, "svt": 0 }
+      },
+      "hrv_metrics": {
+        "sdnn": 282, "sdann": 284, "sdnn_index": 118, "rmssd": 113, "pnn50": 43.31, "lf_hf": 0.94, "tri_index": 62.48, "lf": 2708, "hf": 2876
+      }
+    },
+    {
+      "patient_info": {
+        "name": "徐有德", "sex": "男", "age": 63, "id": "2508040855572068",
+        "record_time": "2025-08-04 08:55:57", "duration": "23小时04分钟", "diagnosis": "心悸"
+      },
+      "overall_stats": {
+        "total_beats": 99566,
+        "max_hr": { "value": 115, "time": "08-04 09:19:20" },
+        "min_hr": { "value": 50, "time": "08-05 04:58:53" },
+        "avg_hr": 72,
+        "longest_rr": { "value": 1.468, "time": "08-05 02:04:03" }
+      },
+      "arrhythmia_events": {
+        "ventricular": { "total": 51, "percentage": "< 0.1", "single": 51, "pair": 0, "bigeminy": 0, "trigeminy": 0, "vt": 0 },
+        "supraventricular": { "total": 619, "percentage": 0.62, "single": 607, "pair": 1, "bigeminy": 4, "trigeminy": 3, "svt": 2 },
+        "atrial_fibrillation": { "runs": 6, "total_beats": 263, "avg_hr": 124, "total_duration": "00:02:08" }
+      },
+      "hrv_metrics": {
+        "sdnn": 137, "sdann": 130, "sdnn_index": 43, "rmssd": 23, "pnn50": 3.88, "lf_hf": 1.50, "tri_index": 34.37, "lf": 278, "hf": 185
+      }
+    },
+    {
+      "patient_info": {
+        "name": "王春侠", "sex": "女", "age": 63, "id": "2508040901193373",
+        "record_time": "2025-08-04 09:01:19", "duration": "23小时09分钟", "diagnosis": "心悸"
+      },
+      "overall_stats": {
+        "total_beats": 75567,
+        "max_hr": { "value": 84, "time": "08-05 08:07:49" },
+        "min_hr": { "value": 40, "time": "08-05 05:19:23" },
+        "avg_hr": 54,
+        "longest_rr": { "value": 1.604, "time": "08-04 23:55:24" }
+      },
+      "arrhythmia_events": {
+        "ventricular": { "total": 70, "percentage": "< 0.1", "single": 68, "pair": 1, "bigeminy": 1, "trigeminy": 1, "vt": 0 },
+        "supraventricular": { "total": 16, "percentage": "< 0.1", "single": 14, "pair": 1, "bigeminy": 0, "trigeminy": 0, "svt": 0 }
+      },
+      "hrv_metrics": {
+        "sdnn": 183, "sdann": 175, "sdnn_index": 52, "rmssd": 30, "pnn50": 9.46, "lf_hf": 1.56, "tri_index": 57.86, "lf": 294, "hf": 189
+      }
+    },
+    {
+      "patient_info": {
+        "name": "吕雪松", "sex": "女", "age": 59, "id": "2508040904136424",
+        "record_time": "2025-08-04 09:04:13", "duration": "22小时56分钟", "diagnosis": "肺气肿"
+      },
+      "overall_stats": {
+        "total_beats": 94426,
+        "max_hr": { "value": 138, "time": "08-04 12:24:05" },
+        "min_hr": { "value": 50, "time": "08-04 23:26:40" },
+        "avg_hr": 69,
+        "longest_rr": { "value": 1.472, "time": "08-05 00:09:23" }
+      },
+      "arrhythmia_events": {
+        "ventricular": { "total": 9, "percentage": "< 0.1", "single": 9, "pair": 0, "bigeminy": 0, "trigeminy": 0, "vt": 0 },
+        "supraventricular": { "total": 18, "percentage": "< 0.1", "single": 15, "pair": 0, "bigeminy": 0, "trigeminy": 0, "svt": 1 }
+      },
+      "hrv_metrics": {
+        "sdnn": 163, "sdann": 142, "sdnn_index": 56, "rmssd": 27, "pnn50": 6.31, "lf_hf": 2.01, "tri_index": 45.76, "lf": 395, "hf": 196
+      }
+    },
+    {
+      "patient_info": {
+        "name": "杨春玲", "sex": "女", "age": 64, "id": "2508040915483338",
+        "record_time": "2025-08-04 09:15:48", "duration": "22小时52分钟", "diagnosis": "心悸"
+      },
+      "overall_stats": {
+        "total_beats": 93897,
+        "max_hr": { "value": 107, "time": "08-05 07:55:52" },
+        "min_hr": { "value": 48, "time": "08-05 01:23:48" },
+        "avg_hr": 68,
+        "longest_rr": { "value": 1.461, "time": "08-05 04:25:10" }
+      },
+      "arrhythmia_events": {
+        "ventricular": { "total": 0, "percentage": 0.0, "single": 0, "pair": 0, "bigeminy": 0, "trigeminy": 0, "vt": 0 },
+        "supraventricular": { "total": 50, "percentage": "< 0.1", "single": 41, "pair": 3, "bigeminy": 0, "trigeminy": 0, "svt": 1 }
+      },
+      "hrv_metrics": {
+        "sdnn": 135, "sdann": 123, "sdnn_index": 58, "rmssd": 38, "pnn50": 10.36, "lf_hf": 3.75, "tri_index": 35.01, "lf": 1199, "hf": 320
+      }
+    },
+    {
+      "patient_info": {
+        "name": "陈金刚", "sex": "男", "age": 59, "id": "2508040920502508",
+        "record_time": "2025-08-04 09:20:50", "duration": "22小时39分钟", "diagnosis": "胸闷"
+      },
+      "overall_stats": {
+        "total_beats": 77927,
+        "max_hr": { "value": 108, "time": "08-05 07:21:48" },
+        "min_hr": { "value": 40, "time": "08-05 02:44:21" },
+        "avg_hr": 57,
+        "longest_rr": { "value": 1.597, "time": "08-05 02:13:44" }
+      },
+      "arrhythmia_events": {
+        "ventricular": { "total": 3, "percentage": "< 0.1", "single": 3, "pair": 0, "bigeminy": 0, "trigeminy": 0, "vt": 0 },
+        "supraventricular": { "total": 21, "percentage": "< 0.1", "single": 21, "pair": 0, "bigeminy": 0, "trigeminy": 0, "svt": 0 }
+      },
+      "hrv_metrics": {
+        "sdnn": 194, "sdann": 169, "sdnn_index": 79, "rmssd": 34, "pnn50": 11.02, "lf_hf": 4.85, "tri_index": 64.75, "lf": 979, "hf": 202
+      }
+    },
+    {
+      "patient_info": {
+        "name": "魏馨", "sex": "女", "age": 45, "id": "2508040930572143",
+        "record_time": "2025-08-04 09:30:57", "duration": "22小时41分钟", "diagnosis": "高血压"
+      },
+      "overall_stats": {
+        "total_beats": 109686,
+        "max_hr": { "value": 149, "time": "08-04 20:44:29" },
+        "min_hr": { "value": 48, "time": "08-05 00:11:17" },
+        "avg_hr": 81,
+        "longest_rr": { "value": 1.358, "time": "08-05 00:12:10" }
+      },
+      "arrhythmia_events": {
+        "ventricular": { "total": 22, "percentage": "< 0.1", "single": 22, "pair": 0, "bigeminy": 0, "trigeminy": 0, "vt": 0 },
+        "supraventricular": { "total": 2, "percentage": "< 0.1", "single": 2, "pair": 0, "bigeminy": 0, "trigeminy": 0, "svt": 0 }
+      },
+      "hrv_metrics": {
+        "sdnn": 154, "sdann": 150, "sdnn_index": 46, "rmssd": 21, "pnn50": 2.96, "lf_hf": 1.88, "tri_index": 32.30, "lf": 296, "hf": 157
+      }
+    }
+  ]
+}
